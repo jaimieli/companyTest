@@ -2,6 +2,8 @@
 
 <div class="col-md-12">
   <div class="container">
-    This is the slack view.
+    <h2>This is the slack view.</h2>
+    <input ng-model="message"></input>
+    <button ng-click="Slack.sendSlack(message)">Send Slack Message to Summer</button>
   </div>
 </div>

@@ -6,6 +6,7 @@ angular.module('companyTestApp')
       .state('slack', {
         url: '/slack',
         templateUrl: 'app/slack/slack.html',
-        controller: 'SlackCtrl'
+        controller: 'SlackCtrl',
+        controllerAs: 'Slack'
       });
   });

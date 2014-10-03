@@ -5,6 +5,7 @@ var controller = require('./message.controller');
 
 var router = express.Router();
 
+router.post('/sendMessage', controller.sendMessage);
 router.get('/', controller.index);
 router.get('/:id', controller.show);
 router.post('/', controller.create);

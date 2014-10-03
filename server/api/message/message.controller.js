@@ -3,6 +3,26 @@
 var _ = require('lodash');
 var Message = require('./message.model');
 
+var Slack = require('slack-node');
+var domain = "fullstackacademy";
+var token = "nnvFNxA446xzdPtymBAerBRC";
+var slack = new Slack(token, domain);
+
+// slack configuration
+
+// send slack message
+exports.sendMessage = function(req, res){
+  var payload = req.body;
+  slack.webhook({
+    channel: "@summermichiko",
+    username: "testbot",
+    text: payload.text
+  }, function(err, response) {
+    console.log(response);
+  })
+  res.send('sent message');
+}
+
 // Get list of messages
 exports.index = function(req, res) {
   Message.find(function (err, messages) {
