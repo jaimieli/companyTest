@@ -5,6 +5,9 @@ angular.module('companyTestApp')
     $scope.menu = [{
       'title': 'Home',
       'link': '/'
+    }, {
+      'title': 'Slack',
+      'link': '/slack'
     }];
 
     $scope.isCollapsed = true;
