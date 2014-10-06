@@ -15,9 +15,10 @@ var UserSchema = new Schema({
   hashedPassword: String,
   provider: String,
   salt: String,
-  twitter: {},
-  github: {}
+  score: Number
 });
+
+
 
 /**
  * Virtuals
