@@ -2,25 +2,32 @@
 
 var _ = require('lodash');
 var Message = require('./message.model');
-
-var Slack = require('slack-node');
+var request = require('request');
 
 
 // send slack message
 exports.sendMessage = function(req, res){
-  // slack configuration
   var domain = "fullstackacademy";
-  var token = "nnvFNxA446xzdPtymBAerBRC";
-  var slack = new Slack(token, domain);
+  // var token = "xoxp-2151814398-2493693972-2764382274-7e1ff3";
   var payload = req.body;
-  slack.webhook({
-    channel: payload.user,
-    username: "testbot",
-    text: payload.text
-  }, function(err, response) {
-    console.log(response);
+
+  var body = {
+    "text": payload.text,
+    "channel": payload.user,
+    "username": "companyCultureApp"
+  };
+
+  var subdomain = 'fullstackacademy';
+  var token = 'MXo6yuIBqS35l26ssF1D30ZA';
+
+  request({
+    url: 'https://' + subdomain + '.slack.com/services/hooks/incoming-webhook?token=' + token,
+    method: 'POST',
+    body: JSON.stringify(body)
+  }, function(err, body, response) {
+    console.log(body);
+    res.send('sent message');
   })
-  res.send('sent message');
 }
 
 // Get list of messages

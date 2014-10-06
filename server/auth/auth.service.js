@@ -52,7 +52,7 @@ function hasRole(roleRequired) {
       }
     });
 }
-
+// xoxp-2151814398-2493693972-2764382274-7e1ff3
 /**
  * Returns a jwt token signed by the app secret
  */
@@ -66,6 +66,8 @@ function signToken(id) {
 function setTokenCookie(req, res) {
   if (!req.user) return res.json(404, { message: 'Something went wrong, please try again.'});
   var token = signToken(req.user._id, req.user.role);
+  // console.log("this is req from authentication: ", req);
+  // console.log("=========================================================");
   res.cookie('token', JSON.stringify(token));
   res.redirect('/');
 }
@@ -74,3 +76,5 @@ exports.isAuthenticated = isAuthenticated;
 exports.hasRole = hasRole;
 exports.signToken = signToken;
 exports.setTokenCookie = setTokenCookie;
+
+

@@ -47,6 +47,12 @@ var all = {
     callbackURL:  (process.env.DOMAIN || '') + '/auth/twitter/callback'
   },
 
+  slack: {
+    clientID:     process.env.SLACK || '2151814398.2764197458',
+    clientSecret: process.env.SLACK_SECRET || '703662540e6d522af6500b2c0a1c34ce',
+    callbackURL:  (process.env.DOMAIN || 'http://localhost:9000') + '/auth/slack/callback'
+  }
+
 };
 
 // Export the config object based on the NODE_ENV
@@ -54,3 +60,8 @@ var all = {
 module.exports = _.merge(
   all,
   require('./' + process.env.NODE_ENV + '.js') || {});
+
+
+
+
+

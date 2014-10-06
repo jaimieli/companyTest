@@ -12,6 +12,9 @@ module.exports = {
   TWITTER_ID:       'app-id',
   TWITTER_SECRET:   'secret',
 
+  SLACK_ID:       '2151814398.2764197458',
+  SLACK_SECRET:   '703662540e6d522af6500b2c0a1c34ce',
+
   // Control debug level for modules using visionmedia/debug
   DEBUG: ''
 };
