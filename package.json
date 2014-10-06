@@ -21,8 +21,8 @@
     "passport": "~0.2.0",
     "passport-local": "~0.1.6",
     "passport-twitter": "latest",
+    "request": "^2.45.0",
     "serve-favicon": "~2.0.1",
-    "slack-node": "0.0.93",
     "socket.io": "^1.0.6",
     "socket.io-client": "^1.0.6",
     "socketio-jwt": "^2.0.2"
