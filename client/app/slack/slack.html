@@ -3,7 +3,11 @@
 <div class="col-md-12">
   <div class="container">
     <h2>This is the slack view.</h2>
-    <input ng-model="message"></input>
-    <button ng-click="Slack.sendSlack(message)">Send Slack Message to Summer</button>
+    <label>Slack Text</label>
+    <input ng-model="Slack.message.text"></input>
+    <br></br>
+    <label>Slack Username(use @)</label>
+    <input ng-model="Slack.message.user"></input>
+    <button ng-click="Slack.sendSlack(Slack.message)">Send message</button>
   </div>
 </div>
